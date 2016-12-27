@@ -1,0 +1,14 @@
+npm-debug.log
+node_modules
+*.iml
+dist
+build/*.js
+build/*.js.map
+build/images
+build/fonts
+build/*.eot
+build/*.svg
+build/*.ttf
+build/*.woff
+build/*.woff2
+.DS_Store
