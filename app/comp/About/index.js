@@ -5,7 +5,7 @@ import style from './style.css'
 const About = () => (
   <div>
     <p className={ style.text }>this is the About page</p>
-    <Link to="/">go to app</Link>
+    <Link to="/">go to home</Link>
   </div>
 )
 

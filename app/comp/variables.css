@@ -2,3 +2,9 @@
   --blue: #1FEEFF;
   --pink: #FD80F6;
 }
+
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

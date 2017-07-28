@@ -1,7 +1,8 @@
 const webpack = require('webpack')
 const path = require('path')
 const autoprefixer = require('autoprefixer')
-const postCssNext = require('postcss-cssnext')
+const postcssImport = require('postcss-import')
+const postcssNext = require('postcss-cssnext')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
@@ -64,6 +65,9 @@ module.exports = {
     ]
   },
     postcss: function () {
-      return [autoprefixer, postCssNext]
+      return [
+        postcssImport, 
+        postcssNext
+      ]
   },
 }

@@ -1,3 +1,5 @@
+@import '../variables';
+
 body {
   font-family: 'futura';
   margin: 0;
@@ -9,20 +11,17 @@ body {
   text-align: center;
   background-color: #FFDEE9;
   background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
-}
-
-.flex_center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  composes: flex_center;
 }
 
 .header {
   background: whitesmoke;
   height: 25vh;
+  composes: flex_center;
 }
 
 .footer {
   background: papayawhip;
   height: 25vh;
+  composes: flex_center;
 }

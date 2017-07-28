@@ -4,11 +4,11 @@ import cn from 'classnames'
 
 const Layout = (props) => (
   <div>
-    <div className={ cn(style.header, style.flex_center) }>Welcome Header</div>
-    <div className={ cn(style.content, style.flex_center) }>
+    <div className={ style.header }>Welcome Header</div>
+    <div className={ style.content }>
       { props.children }
     </div>
-    <div className={ cn(style.footer, style.flex_center) }>Footer</div>
+    <div className={ style.footer }>Footer</div>
   </div>
 )
 
