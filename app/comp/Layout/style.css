@@ -1,0 +1,28 @@
+body {
+  font-family: 'futura';
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  height: 50vh;
+  text-align: center;
+  background-color: #FFDEE9;
+  background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+}
+
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  background: whitesmoke;
+  height: 25vh;
+}
+
+.footer {
+  background: papayawhip;
+  height: 25vh;
+}

@@ -1,6 +1,8 @@
 const webpack = require('webpack')
 const path = require('path')
-const autoprefixer = require('autoprefixer')
+const postcssImport = require('postcss-import')
+const postcssNext = require('postcss-cssnext')
+const CssOptions = '?modules=true&localIdentName=[local]___[hash:base64:5]'
 
 module.exports = {
   entry: [
@@ -29,8 +31,8 @@ module.exports = {
         include: path.join(__dirname, 'app')
       },
       {
-        test: /\.sass$/,
-        loader: 'style!css!postcss!sass',
+        test: /\.css$/, 
+        loader: `style-loader!css-loader${CssOptions}!postcss`
       },
       {
         test: /\.yaml$/,
@@ -46,7 +48,10 @@ module.exports = {
       }
     ]
   },
-    postcss: function() {
-      return [autoprefixer]
+    postcss: function () {
+      return [
+        postcssImport, 
+        postcssNext
+      ]
   },
 }

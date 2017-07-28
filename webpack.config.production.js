@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 const autoprefixer = require('autoprefixer')
+const postCssNext = require('postcss-cssnext')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
@@ -19,6 +20,7 @@ module.exports = {
     extensions: ['', '.js']
   },
   plugins: [
+    new ExtractTextPlugin('styles.css'),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
@@ -40,8 +42,12 @@ module.exports = {
         include: path.join(__dirname, 'app')
       },
       {
-        test: /\.sass$/,
-        loader: 'style!css!postcss!sass',
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract(
+          'style-loader',
+          'css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]',
+          'postcss-loader'
+        )
       },
       {
         test: /\.yaml$/,
@@ -57,7 +63,7 @@ module.exports = {
       }
     ]
   },
-    postcss: function() {
-      return [autoprefixer]
+    postcss: function () {
+      return [autoprefixer, postCssNext]
   },
 }
