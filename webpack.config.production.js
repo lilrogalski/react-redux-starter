@@ -18,11 +18,10 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['*', '.js']
   },
   plugins: [
     new ExtractTextPlugin('styles.css'),
-    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
@@ -36,38 +35,52 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel',
-        include: path.join(__dirname, 'app')
+        loaders: ['babel-loader'],
+        include: path.join(__dirname, 'app'),
       },
       {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract(
+        test: /\.css$/, 
+        use: [
           'style-loader',
-          'css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]',
-          'postcss-loader'
-        )
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: true,
+              localIndentName: '[local]___[hash:base64:5]',
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => {
+                return [
+                  postcssImport, 
+                  postcssNext
+                ]
+              }
+            }
+          }
+        ]
       },
       {
         test: /\.yaml$/,
-        loader: 'json!yaml'
+        use: [
+          'json-loader',
+          'yaml-loader'
+        ]
       },
       { 
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff' 
+        use: ['url-loader?limit=10000&mimetype=application/font-woff']
       },
       { 
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
-        loader: 'file-loader?name=fonts/[name].[ext]' 
+        use: ['file-loader']
       }
     ]
-  },
-    postcss: function () {
-      return [
-        postcssImport, 
-        postcssNext
-      ]
-  },
+  }
 }
