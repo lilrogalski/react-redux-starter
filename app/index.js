@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Routes from './comp/Routes'
+import Routes from './Routes'
 
 render(
   <Routes />,
