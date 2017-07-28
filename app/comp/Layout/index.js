@@ -4,7 +4,7 @@ import cn from 'classnames'
 
 const Layout = (props) => (
   <div>
-    <div className={ style.header }>Welcome Header</div>
+    <div className={ style.header }>Header</div>
     <div className={ style.content }>
       { props.children }
     </div>
