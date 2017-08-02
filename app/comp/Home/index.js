@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom'
 import style from './style.css'
 
 const Home = () => (
-  <div className={ style.home }>
-    <div>
-      <p className={ style.text }>this is the Home page</p>
-      <Link to="/about">go to about</Link>      
-    </div>
+  <div>
+    <p className={ style.text }>this is the Home page</p>
+    <Link to="/about">go to about</Link>      
   </div>
 )
 

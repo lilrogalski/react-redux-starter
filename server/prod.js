@@ -15,6 +15,4 @@ app.get('*', (req, res) => {
 })
 
 // And run the server
-app.listen(port, () => {
-  console.log('Server running on port ' + port)
-})
+app.listen(port, () => console.log('Server running on port ' + port))
