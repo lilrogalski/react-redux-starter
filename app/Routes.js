@@ -1,19 +1,19 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, IndexRoute, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Layout from './comp/Layout'
 import Home from './comp/Home'
 import About from './comp/About'
-import style from './comp/variables.css'
+import './comp/variables.css'
 
 export default class Routes extends React.Component {
-  render() {
+  render () {
     return (
       <Router>
         <Layout>
           <Route exact path="/" component={ Home } />
-          <Route path="/about" component={ About } />        
+          <Route path="/about" component={ About } />
         </Layout>
       </Router>
     )
   }
-} 
+}

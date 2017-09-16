@@ -1,6 +1,5 @@
 import React from 'react'
 import style from './style.css'
-import cn from 'classnames'
 
 const Layout = (props) => (
   <div>
@@ -13,6 +12,3 @@ const Layout = (props) => (
 )
 
 export default Layout
-
-
-

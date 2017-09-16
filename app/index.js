@@ -6,4 +6,3 @@ render(
   <Routes />,
   document.getElementById('root')
 )
-

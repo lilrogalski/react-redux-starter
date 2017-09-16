@@ -27,10 +27,10 @@ module.exports = {
       {
         test: /\.js$/,
         loaders: ['babel-loader'],
-        include: path.join(__dirname, 'app'),
+        include: path.join(__dirname, 'app')
       },
       {
-        test: /\.css$/, 
+        test: /\.css$/,
         use: [
           'style-loader',
           {
@@ -46,7 +46,7 @@ module.exports = {
             options: {
               plugins: () => {
                 return [
-                  postcssImport, 
+                  postcssImport,
                   postcssNext
                 ]
               }
@@ -61,12 +61,12 @@ module.exports = {
           'yaml-loader'
         ]
       },
-      { 
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: ['url-loader?limit=10000&mimetype=application/font-woff']
       },
-      { 
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: ['file-loader']
       }
     ]
