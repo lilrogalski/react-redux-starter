@@ -7,8 +7,10 @@ build/*.js.map
 build/images
 build/fonts
 build/*.eot
+build/*.css
 build/*.svg
 build/*.ttf
 build/*.woff
 build/*.woff2
+build/*.*.gz
 .DS_Store

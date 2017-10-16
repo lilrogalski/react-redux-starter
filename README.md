@@ -13,8 +13,8 @@ The various webpack options used have been explained in detailed as comments in 
 ### Usage
 
 ```
-npm install
-npm start
+yarn install
+yarn start
 Open http://localhost:5000
 ```
 
@@ -23,6 +23,14 @@ Open http://localhost:5000
 ESLint with React linting options have been enabled.
 
 ```
-npm run lint
+yarn lint
+```
+
+### Building
+
+ESLint with React linting options have been enabled.
+
+```
+yarn build
 ```
 

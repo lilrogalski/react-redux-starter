@@ -3,11 +3,15 @@ const path = require('path')
 const postcssImport = require('postcss-import')
 const postcssNext = require('postcss-cssnext')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: {
     'index': [
       'babel-polyfill',
+      'whatwg-fetch',
       './app/index.js'
     ]
   },
@@ -26,58 +30,66 @@ module.exports = {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        drop_console: true
+    new UglifyJSPlugin({
+      uglifyOptions: {
+        mangle: {
+          safari10: true
+        },
+        compress: {
+          warnings: false,
+          drop_console: true
+        }
       }
-    })
+    }),
+    new CompressionPlugin({
+      asset: '[path].gz[query]',
+      algorithm: 'gzip',
+      test: /\.js$/,
+      threshold: 10240,
+      minRatio: 0.8
+    }),
+    new CopyWebpackPlugin([{
+      from: 'images',
+      to: 'images'
+    }])
   ],
   module: {
     rules: [
       {
         test: /\.js$/,
         loaders: ['babel-loader'],
-        include: path.join(__dirname, 'app')
+        include: [
+          path.join(__dirname, 'app')
+        ]
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          {
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [{
             loader: 'css-loader',
             options: {
+              minimize: true,
               modules: true,
               sourceMap: true,
-              localIdentName: '[local]___[hash:base64:5]',
+              localIdentName: '[hash:base64:5]'
             }
+
           },
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => {
-                return [
-                  postcssImport,
-                  postcssNext
-                ]
-              }
+              ident: 'postcss',
+              plugins: () => [
+                postcssImport,
+                postcssNext
+              ]
             }
-          }
-        ]
+          }]
+        })
       },
       {
-        test: /\.yaml$/,
-        use: [
-          'json-loader',
-          'yaml-loader'
-        ]
-      },
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: ['url-loader?limit=10000&mimetype=application/font-woff']
-      },
-      {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        test: /\.svg$/,
         use: ['file-loader']
       }
     ]
