@@ -28,7 +28,7 @@ yarn lint
 
 ### Building
 
-ESLint with React linting options have been enabled.
+Build static assets, minified and gzipped.
 
 ```
 yarn build
