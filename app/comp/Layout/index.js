@@ -1,14 +1,8 @@
 import React from 'react'
-import style from './style.css'
+import './style.css'
 
 const Layout = (props) => (
-  <div>
-    <div className={ style.header }>Header</div>
-    <div className={ style.content }>
-      { props.children }
-    </div>
-    <div className={ style.footer }>Footer</div>
-  </div>
+  <div>{ props.children }</div>
 )
 
 export default Layout
