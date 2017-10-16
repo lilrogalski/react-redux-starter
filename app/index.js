@@ -1,15 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import todoApp from './comp/reducers'
-import App from './comp/App'
-
-let store = createStore(todoApp)
+import Routes from './Routes'
 
 render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Routes/>,
   document.getElementById('root')
 )
