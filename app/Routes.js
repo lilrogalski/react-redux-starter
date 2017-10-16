@@ -15,7 +15,7 @@ export default class Routes extends React.Component {
       <Provider store={store}>
         <Router>
           <Layout>
-            <Route exact path="/" component={ App } />
+            <Route path="/:filter?" component={ App } />
           </Layout>
         </Router>
       </Provider>
