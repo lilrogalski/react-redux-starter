@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import todoApp from './comp/reducers'
+import todoApp from './reducers'
 
 import Layout from './comp/Layout'
 import App from './comp/App'
