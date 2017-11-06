@@ -1,7 +1,5 @@
 const webpack = require('webpack')
 const path = require('path')
-const postcssImport = require('postcss-import')
-const postcssNext = require('postcss-cssnext')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
@@ -15,6 +13,13 @@ module.exports = {
       './app/index.js'
     ]
   },
+  devServer: {
+    hot: true,
+    port: 5000,
+    historyApiFallback: {
+      index: 'index.html'
+    }
+  },  
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
@@ -66,26 +71,19 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [{
-            loader: 'css-loader',
-            options: {
-              minimize: true,
-              modules: true,
-              sourceMap: true,
-              localIdentName: '[hash:base64:5]'
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: true,
+                modules: true,
+                localIdentName: '[hash:base64:3]'
+              }
+            },
+            {
+              loader: 'postcss-loader'
             }
-
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: () => [
-                postcssImport,
-                postcssNext
-              ]
-            }
-          }]
+          ]
         })
       },
       {

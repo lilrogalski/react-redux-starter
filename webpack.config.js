@@ -1,7 +1,5 @@
 const webpack = require('webpack')
 const path = require('path')
-const postcssImport = require('postcss-import')
-const postcssNext = require('postcss-cssnext')
 
 module.exports = {
   entry: [
@@ -48,15 +46,7 @@ module.exports = {
             }
           },
           {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => {
-                return [
-                  postcssImport,
-                  postcssNext
-                ]
-              }
-            }
+            loader: 'postcss-loader'
           }
         ]
       },
