@@ -19,7 +19,7 @@ module.exports = {
     historyApiFallback: {
       index: 'index.html'
     }
-  },  
+  },
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
