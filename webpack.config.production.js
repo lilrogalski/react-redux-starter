@@ -77,6 +77,7 @@ module.exports = {
               options: {
                 minimize: true,
                 modules: true,
+                sourceMap: true,
                 localIdentName: '[hash:base64:3]'
               }
             },
