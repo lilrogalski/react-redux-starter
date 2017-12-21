@@ -10,8 +10,8 @@ export default class Routes extends React.Component {
     return (
       <Router>
         <Layout>
-          <Route exact path="/" component={ Home } />
-          <Route path="/about" component={ About } />
+          <Route exact path="/" render={ () => <Home title="Home" /> } />
+          <Route path="/about" render={ () => <About title="About" /> } />
         </Layout>
       </Router>
     )
