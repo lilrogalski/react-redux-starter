@@ -13,11 +13,7 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['*', '.js'],
-    alias: {
-      'videojs-contrib-dash': path.resolve(__dirname, './node_modules/videojs-contrib-dash/src/js/videojs-dash.js'),
-      webworkify: 'webworkify-webpack-dropin'
-    }
+    extensions: ['*', '.js']
   },
   devtool: 'source-map',
   plugins: [
@@ -31,23 +27,6 @@ module.exports = {
         loaders: ['babel-loader'],
         include: [
           path.join(__dirname, 'app')
-        ]
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              sourceMap: true,
-              localIdentName: '[local]___[hash:base64:5]'
-            }
-          },
-          {
-            loader: 'postcss-loader'
-          }
         ]
       },
       {

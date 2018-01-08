@@ -68,26 +68,6 @@ module.exports = {
         ]
       },
       {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                minimize: true,
-                modules: true,
-                sourceMap: true,
-                localIdentName: '[hash:base64:3]'
-              }
-            },
-            {
-              loader: 'postcss-loader'
-            }
-          ]
-        })
-      },
-      {
         test: /\.svg$/,
         use: ['file-loader']
       }

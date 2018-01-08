@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import style from './style.css'
+import { Text } from '../styles/global'
 
 const Home = () => (
   <div>
-    <p className={ style.text }>this is the Home page</p>
+    <Text>this is the Home page</Text>
     <Link to="/about">go to about</Link>
   </div>
 )
