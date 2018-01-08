@@ -4,6 +4,8 @@ import Layout from './comp/Layout'
 import Home from './comp/Home'
 import About from './comp/About'
 
+// use a class to ensure HMR works properly, this would normally be a stateless component
+// eslint-disable-next-line react/prefer-stateless-function
 export default class Routes extends React.Component {
   render () {
     return (
