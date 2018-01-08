@@ -4,21 +4,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const DotenvPlugin = require('dotenv-webpack')
 
 module.exports = {
   entry: {
-    'index': [
-      'babel-polyfill',
-      'whatwg-fetch',
-      './app/index.js'
-    ]
-  },
-  devServer: {
-    hot: true,
-    port: 5000,
-    historyApiFallback: {
-      index: 'index.html'
-    }
+    index: ['babel-polyfill', 'whatwg-fetch', './app/index.js']
   },
   output: {
     path: path.join(__dirname, 'build'),
@@ -26,13 +16,15 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['*', '.js']
+    extensions: ['*', '.js'],
   },
+  devtool: 'cheap-module-source-map',
   plugins: [
+    new DotenvPlugin(),
     new ExtractTextPlugin('styles.css'),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production')
+        NODE_ENV: JSON.stringify('production')
       }
     }),
     new UglifyJSPlugin({
@@ -53,10 +45,12 @@ module.exports = {
       threshold: 10240,
       minRatio: 0.8
     }),
-    new CopyWebpackPlugin([{
-      from: 'images',
-      to: 'images'
-    }])
+    new CopyWebpackPlugin([
+      {
+        from: 'images',
+        to: 'images'
+      }
+    ])
   ],
   module: {
     rules: [

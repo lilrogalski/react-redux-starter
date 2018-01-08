@@ -2,24 +2,25 @@ const webpack = require('webpack')
 const path = require('path')
 
 module.exports = {
-  entry: [
-    'webpack-dev-server/client?http://localhost:5000',
-    'webpack/hot/dev-server',
-    './app/index'
-  ],
+  entry: {
+    index: ['./app/index.js']
+  },
+  devServer: {
+    port: 5000,
+    hot: true,
+    historyApiFallback: {
+      index: 'index.html'
+    }
+  },
   output: {
     path: __dirname,
     filename: 'bundle.js',
     publicPath: '/'
   },
   resolve: {
-    extensions: ['*', '.js'],
-    alias: {
-      'videojs-contrib-dash': path.resolve(__dirname, './node_modules/videojs-contrib-dash/src/js/videojs-dash.js'),
-      webworkify: 'webworkify-webpack-dropin'
-    }
+    extensions: ['*', '.js']
   },
-  devtool: 'source-map',
+  devtool: 'cheap-module-eval-source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
@@ -30,6 +31,7 @@ module.exports = {
         test: /\.js$/,
         loaders: ['babel-loader'],
         include: [
+          path.resolve(__dirname, 'node_modules/videojs-contrib-dash'),
           path.join(__dirname, 'app')
         ]
       },
@@ -42,7 +44,7 @@ module.exports = {
             options: {
               modules: true,
               sourceMap: true,
-              localIdentName: '[local]___[hash:base64:5]'
+              localIdentName: '[local]_[hash:base64:3]'
             }
           },
           {
