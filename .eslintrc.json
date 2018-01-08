@@ -33,6 +33,7 @@
     "camelcase": 0,
     "object-shorthand": ["error", "always"],
     "prefer-promise-reject-errors": 0,
+    "react/prop-types": 0,
     "react/react-in-jsx-scope": 0,
     "react/prefer-stateless-function": 2,
     "react/no-unknown-property": 0,
