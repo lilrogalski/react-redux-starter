@@ -3,6 +3,10 @@ import styled, { injectGlobal } from 'styled-components'
 import { FlexCenter } from '../styles/global'
 
 injectGlobal`
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     font-family: 'futura';
     margin: 0;
