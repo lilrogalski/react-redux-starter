@@ -16,17 +16,30 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": ["src"]
+        "paths": [
+          "src"
+        ]
       }
     }
   },
   "rules": {
-    "no-console": 0,
+    "no-console": 1,
+    "no-var": "error",
+    "prefer-const": "error",
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "camelcase": 0,
+    "object-shorthand": ["error", "always"],
     "prefer-promise-reject-errors": 0,
     "react/react-in-jsx-scope": 0,
-    "react/prop-types": 0,
+    "react/prefer-stateless-function": 2,
+    "react/prop-types": 1,
     "react/no-unknown-property": 0,
     "react/no-unescaped-entities": 0,
+    "react/jsx-closing-bracket-location": 2,
+    "react/jsx-space-before-closing": 2,
     "css-modules/no-undef-class": 2
   },
   "globals": {
