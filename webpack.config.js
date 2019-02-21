@@ -31,7 +31,6 @@ module.exports = {
         test: /\.js$/,
         loaders: ['babel-loader'],
         include: [
-          path.resolve(__dirname, 'node_modules/videojs-contrib-dash'),
           path.join(__dirname, 'app')
         ]
       },
