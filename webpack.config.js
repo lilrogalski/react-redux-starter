@@ -29,7 +29,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loaders: ['babel-loader'],
+        use: 'babel-loader',
         include: [
           path.join(__dirname, 'app')
         ]
