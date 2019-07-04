@@ -1,0 +1,78 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "flowtype",
+    "css-modules",
+    "jest",
+    "prettier",
+    "import"
+  ],
+  "env": {
+    "browser": true,
+    "jest/globals": true
+  },
+  "extends": [
+    "standard",
+    "plugin:react/recommended",
+    "plugin:flowtype/recommended",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "prettier/standard",
+    "prettier/react",
+    "prettier/flowtype"
+  ],
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    },
+    "import/resolver": {
+      "babel-module": {},
+      "webpack": {
+        "config": "webpack.config.js"
+      },
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  },
+  "rules": {
+    "no-console": 1,
+    "no-var": "error",
+    "prefer-const": "error",
+    "object-curly-spacing": ["error", "always"],
+    "camelcase": 0,
+    "operator-linebreak": 0,
+    "comma-dangle": ["error", "always-multiline"],
+    "object-shorthand": ["error", "always"],
+    "prefer-promise-reject-errors": 2,
+    "jsx-quotes": [2, "prefer-double"],
+    "react/self-closing-comp": 2,
+    "react/sort-comp": 2,
+    "react/prop-types": 0,
+    "react/display-name": 0,
+    "react/react-in-jsx-scope": 2,
+    "react/prefer-stateless-function": 2,
+    "react/no-unknown-property": 2,
+    "react/no-unescaped-entities": 2,
+    "react/jsx-closing-bracket-location": 2,
+    "react/jsx-tag-spacing": 2,
+    "react/jsx-curly-spacing": 2,
+    "css-modules/no-undef-class": 2,
+    "jest/prefer-to-be-null": 2,
+    "jest/prefer-to-be-undefined": 2,
+    "flowtype/space-after-type-colon": [
+      2,
+      "always",
+      { "allowLineBreak": true }
+    ],
+    "prettier/prettier": "error"
+  },
+  "globals": {
+    "SyntheticEvent": true,
+    "APP_ID": true,
+    "VERSION_STRING": true
+  }
+}

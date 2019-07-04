@@ -1,0 +1,92 @@
+@import 'lib/css/variables';
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+  --lato: 'Lato', 'avenir', 'sans-serif';
+  --font-light: 300;
+  --font-reg: 400;
+  --font-med: 600;
+  --font-bold: 700;
+  --font-spacing: 0.025em;
+  --line-height: 1.6em;
+}
+
+body {
+  font-family: var(--lato);
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: var(--lato);
+  letter-spacing: var(--font-spacing);
+  line-height: var(--line-height);
+  padding: 0.5rem 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-med);
+}
+
+p {
+  font-weight: var(--font-reg);
+}
+
+a {
+  font-weight: var(--font-med);
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: 0;
+}
+
+h1 {
+  font-size: 6rem;
+}
+h2 {
+  font-size: 5rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 {
+  font-size: 2.25rem;
+}
+h5 {
+  font-size: 1.5rem;
+}
+h6 {
+  font-size: 1.25rem;
+}
+p,
+a {
+  font-size: 1rem;
+}

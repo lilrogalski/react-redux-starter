@@ -1,0 +1,52 @@
+@import './variables';
+@import './type';
+
+:root {
+  --border-radius: 0.25rem;
+}
+
+.btn {
+  background: white;
+  border: 1px solid var(--border);
+  font-weight: var(--font-med);
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.btn:disabled {
+  cursor: no-drop;
+}
+
+.btn_group {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.btn_group .btn {
+  border-radius: 0;
+}
+
+.btn_group .btn:first-child {
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+
+.btn_group .btn:last-child {
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:active {
+  background: rgb(247, 247, 255);
+}
+
+.btn.active {
+  border-color: #b6b6b6;
+  background: #e9e9e9;
+}

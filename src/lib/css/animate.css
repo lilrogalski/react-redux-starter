@@ -1,0 +1,35 @@
+:root {
+  --duration: 300ms;
+}
+
+/* stylelint-disable selector-class-pattern  */
+:global(.fade-enter) {
+  opacity: 0;
+}
+
+:global(.fade-enter-active) {
+  opacity: 1;
+  transition: opacity var(--duration) var(--cubic);
+}
+
+:global(.fade-exit) {
+  opacity: 1;
+}
+
+:global(.fade-exit-active) {
+  opacity: 0;
+  transition: opacity var(--duration) var(--cubic);
+}
+
+:global(.ReactModal__Overlay) {
+  opacity: 0;
+  transition: opacity var(--duration) var(--cubic);
+}
+
+:global(.ReactModal__Overlay)--after-open {
+  opacity: 1;
+}
+
+:global(.ReactModal__Overlay)--before-close {
+  opacity: 0;
+}

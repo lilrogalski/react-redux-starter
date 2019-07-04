@@ -1,0 +1,6 @@
+@import 'lib/css/type';
+@import 'lib/css/animate';
+
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,22 @@
+:root {
+  --border: #ddd;
+  --blue: #91d7ff;
+  --blue-bg: #ecf5fcbb;
+  --link: #6e6e6e;
+  --container: 1440px;
+  --cubic: cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.container {
+  max-width: var(--container);
+  margin: auto;
+  padding: 1rem 0;
+}
+
+@custom-media --desktop-min screen and (width <= 1440px);
+
+@media (--desktop-min) {
+  .container {
+    padding: 1rem;
+  }
+}

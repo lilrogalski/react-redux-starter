@@ -1,0 +1,41 @@
+@import 'lib/css/variables';
+
+.header {
+  border-bottom: 1px solid var(--border);
+  background: #303030;
+}
+
+.title {
+  display: grid;
+  align-items: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+.title h5 {
+  padding: 0;
+  font-size: 1.2rem;
+  font-family: 'futura';
+}
+
+.inner {
+  composes: container;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 3fr 6fr;
+}
+
+.right {
+  text-align: right;
+}
+
+.right a {
+  display: inline-block;
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--link);
+}
+
+a.active {
+  color: white;
+}
