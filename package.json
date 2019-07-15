@@ -1,5 +1,6 @@
 {
-  "name": "minimal-react-webpack-babel-setup",
+  "name": "react-redux-starter",
+  "author": "Ryan Rogalski",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +12,6 @@
     "lint": "DEBUG=eslint:cli eslint ./src --ignore-path .gitignore"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.5",
