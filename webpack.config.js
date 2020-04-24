@@ -4,29 +4,13 @@ const path = require('path')
 const appPath = path.resolve(__dirname, 'app')
 const libPath = path.join(appPath, 'lib')
 
-const isProduction =
-  process.argv.indexOf('-p') >= 0 ||
-  process.env.NODE_ENV === 'production'
-
 module.exports = {
   entry: './app/index.tsx',
   devtool: 'cheap-module-eval-source-map',
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: [
-          !isProduction && {
-            loader: 'babel-loader',
-            options: {
-              plugins: ['react-hot-loader/babel'],
-            },
-          },
-          'ts-loader',
-        ].filter(Boolean),
-      },
-      {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
