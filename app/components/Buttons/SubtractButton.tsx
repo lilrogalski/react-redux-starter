@@ -8,9 +8,9 @@ interface Props {
 }
 
 function SubtractButton({ dispatch }: Props) {
-  const handeClick = () => dispatch(subtractCount())
+  const handleClick = () => dispatch(subtractCount())
   return (
-    <button onClick={handeClick}>Subtract Count</button>
+    <button onClick={handleClick}>Subtract Count</button>
   )
 }
 
