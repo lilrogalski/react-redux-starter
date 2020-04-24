@@ -4,6 +4,7 @@ import { State } from 'lib/reducers/rootReducer'
 import AddButton from '../Buttons/AddButton'
 import SubtractButton from '../Buttons/SubtractButton'
 import style from './style.css'
+import * as btn from 'lib/css/buttons.css'
 
 const mapStateToProps = (state: State) => ({
   count: state.count,
@@ -18,8 +19,10 @@ function Home({ count }: Props) {
     <div className={style.home}>
       <p>Home</p>
       <p>Count: {count}</p>
-      <AddButton />
-      <SubtractButton />
+      <div className={btn.btn_group}>
+        <AddButton />
+        <SubtractButton />
+      </div>
     </div>
   )
 }
