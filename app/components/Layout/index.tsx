@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Header from '../Header'
-import './style.css'
+import style from './style.css'
 
 interface Props {
   children: React.ReactElement[]
@@ -8,9 +8,9 @@ interface Props {
 
 export default function Layout({ children }: Props) {
   return (
-    <div>
+    <>
       <Header />
-      <div>{children}</div>
-    </div>
+      <div className={style.container}>{children}</div>
+    </>
   )
 }

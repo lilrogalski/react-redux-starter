@@ -1,6 +1,11 @@
 @import 'lib/css/type';
 @import 'lib/css/animate';
+@import 'lib/css/variables';
 
 * {
   box-sizing: border-box;
+}
+
+.container {
+  composes: container;
 }
