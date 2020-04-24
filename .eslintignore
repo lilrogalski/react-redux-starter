@@ -1,2 +1,3 @@
 dist/index.html
 types/global.d.ts
+webpack.config.js
