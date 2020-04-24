@@ -9,7 +9,7 @@
     "server": "node server.js",
     "flow": "flow",
     "test": "jest",
-    "lint": "DEBUG=eslint:cli eslint ./src --ignore-path .gitignore"
+    "lint": "DEBUG=eslint:cli eslint ./app --ignore-path .gitignore"
   },
   "keywords": [],
   "license": "ISC",

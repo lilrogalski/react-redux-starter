@@ -1,14 +1,30 @@
 const webpack = require('webpack')
 const path = require('path')
 
-const srcPath = path.resolve(__dirname, 'src')
-const libPath = path.join(srcPath, 'lib')
+const appPath = path.resolve(__dirname, 'app')
+const libPath = path.join(appPath, 'lib')
+
+const isProduction =
+  process.argv.indexOf('-p') >= 0 ||
+  process.env.NODE_ENV === 'production'
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './app/index.js',
   devtool: 'cheap-module-eval-source-map',
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: [
+          !isProduction && {
+            loader: 'babel-loader',
+            options: {
+              plugins: ['react-hot-loader/babel'],
+            },
+          },
+          'ts-loader',
+        ].filter(Boolean),
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -56,5 +72,6 @@ module.exports = {
     hot: true,
     compress: true,
     historyApiFallback: true,
+    open: true,
   },
 }

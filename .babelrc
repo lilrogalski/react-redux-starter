@@ -11,7 +11,7 @@
       {
         "root": ["./"],
         "alias": {
-          "lib": "./src/lib"
+          "lib": "./app/lib"
         }
       }
     ]

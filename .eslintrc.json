@@ -34,7 +34,7 @@
         "config": "webpack.config.js"
       },
       "node": {
-        "paths": ["src"]
+        "paths": ["app"]
       }
     }
   },

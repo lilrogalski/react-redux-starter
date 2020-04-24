@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = ctx => ({
   plugins: {
     'postcss-import': {
-      path: [path.join(ctx.cwd, 'src')],
+      path: [path.join(ctx.cwd, 'app')],
       skipDuplicates: true,
     },
     'postcss-preset-env': {
