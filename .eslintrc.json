@@ -19,8 +19,7 @@
     "plugin:import/typescript",
     "prettier",
     "prettier/standard",
-    "prettier/react",
-    "prettier/flowtype"
+    "prettier/react"
   ],
   "settings": {
     "react": {

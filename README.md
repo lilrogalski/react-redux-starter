@@ -9,7 +9,6 @@ Boilerplate for kickstarting a project with the following technologies:
 - [Redux](https://github.com/reduxjs/redux)
 - [React-Router](https://reacttraining.com/react-router/web/guides/quick-start)
 - [Prettier](https://github.com/prettier/prettier)
-- [Flow](https://github.com/facebook/flow)
 - [Eslint](https://github.com/eslint/eslint)
 - [CSS Modules](https://github.com/css-modules/css-modules) and [PostCSS](https://github.com/postcss/postcss)
 - [Jest](https://github.com/facebook/jest) and [Enzyme](https://github.com/airbnb/enzyme)
@@ -54,11 +53,3 @@ yarn test
 ```
 
 you can use `yarn test --watch` to run jest in watch mode
-
-## Flow
-
-flow static type checking is enabled in vscode, or run on the whole app with
-
-```js
-yarn flow
-```
