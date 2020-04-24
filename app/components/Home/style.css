@@ -1,5 +1,6 @@
 @import 'lib/css/variables';
 
 .home {
-  color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
