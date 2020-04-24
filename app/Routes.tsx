@@ -7,22 +7,15 @@ import Home from './components/Home'
 import About from './components/About'
 import store from './store'
 
-// use a class to ensure HMR works properly, this would normally be a stateless component
-// eslint-disable-next-line react/prefer-stateless-function
-export default class Routes extends React.Component<
-  {},
-  {}
-> {
-  render() {
-    return (
-      <Provider store={store}>
-        <BrowserRouter>
-          <Layout>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-          </Layout>
-        </BrowserRouter>
-      </Provider>
-    )
-  }
+export default function Routes() {
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <Layout>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+        </Layout>
+      </BrowserRouter>
+    </Provider>
+  )
 }

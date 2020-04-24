@@ -1,11 +1,12 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "plugins": [
     "react",
     "css-modules",
     "jest",
     "prettier",
-    "import"
+    "import",
+    "@typescript-eslint"
   ],
   "env": {
     "browser": true,
@@ -19,7 +20,9 @@
     "plugin:import/typescript",
     "prettier",
     "prettier/standard",
-    "prettier/react"
+    "prettier/react",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "settings": {
     "react": {
@@ -69,7 +72,24 @@
     "css-modules/no-undef-class": 2,
     "jest/prefer-to-be-null": 2,
     "jest/prefer-to-be-undefined": 2,
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "@typescript-eslint/member-delimiter-style": [
+      2,
+      {
+        "multiline": {
+          "delimiter": "none"
+        },
+        "singleline": {
+          "delimiter": "comma"
+        }
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": [
+      0,
+      {
+        "allowExpressions": true
+      }
+    ]
   },
   "globals": {
     "SyntheticEvent": true,

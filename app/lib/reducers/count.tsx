@@ -1,7 +1,7 @@
 import { ADD_COUNT, SUBTRACT_COUNT } from '../actions/count'
 
 export function count(
-  state: number = 0,
+  state = 0,
   action: {
     type: string
   },

@@ -5,4 +5,4 @@ import Routes from './Routes'
 render(<Routes />, document.getElementById('root'))
 
 // Opt-in to Webpack hot module replacement
-if ((module as any).hot) (module as any).hot.accept()
+if (module.hot) module.hot.accept()
