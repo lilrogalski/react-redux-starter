@@ -2,6 +2,7 @@
 
 Boilerplate for kickstarting a project with the following technologies:
 
+- [TypeScript](https://www.typescriptlang.org/)
 - [React 16](https://reactjs.org/)
 - [Webpack 4](https://webpack.js.org/)
 - [Babel 7](https://babeljs.io/docs/en/)
@@ -12,7 +13,6 @@ Boilerplate for kickstarting a project with the following technologies:
 - [Eslint](https://github.com/eslint/eslint)
 - [CSS Modules](https://github.com/css-modules/css-modules) and [PostCSS](https://github.com/postcss/postcss)
 - [Jest](https://github.com/facebook/jest) and [Enzyme](https://github.com/airbnb/enzyme)
-- [react-map-gl](https://github.com/uber/react-map-gl)
 
 ## Installation
 
