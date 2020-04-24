@@ -2,7 +2,6 @@
   "parser": "babel-eslint",
   "plugins": [
     "react",
-    "flowtype",
     "css-modules",
     "jest",
     "prettier",
@@ -15,9 +14,9 @@
   "extends": [
     "standard",
     "plugin:react/recommended",
-    "plugin:flowtype/recommended",
     "plugin:jest/recommended",
     "plugin:prettier/recommended",
+    "plugin:import/typescript",
     "prettier",
     "prettier/standard",
     "prettier/react",
@@ -29,9 +28,17 @@
       "version": "detect"
     },
     "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "directory": "./tsconfig.json"
+      },
+      "import/parsers": {
+        "@typescript-eslint/parser": [".ts", ".tsx"]
+      },
       "babel-module": {},
       "webpack": {
-        "config": "webpack.config.js"
+        "config": "webpack.config.js",
+        "extensions": [".js", ".ts"]
       },
       "node": {
         "paths": ["app"]
@@ -63,11 +70,6 @@
     "css-modules/no-undef-class": 2,
     "jest/prefer-to-be-null": 2,
     "jest/prefer-to-be-undefined": 2,
-    "flowtype/space-after-type-colon": [
-      2,
-      "always",
-      { "allowLineBreak": true }
-    ],
     "prettier/prettier": "error"
   },
   "globals": {

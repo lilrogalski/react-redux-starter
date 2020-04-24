@@ -1,16 +1,16 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 import { connect } from 'react-redux'
+import { State } from 'lib/reducers/rootReducer'
 import AddButton from '../Buttons/AddButton'
 import SubtractButton from '../Buttons/SubtractButton'
 import style from './style.css'
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: State) => ({
   count: state.count,
 })
 
-type Props = {
-  count: number,
+interface Props {
+  count: number
 }
 
 function Home({ count }: Props) {

@@ -1,5 +1,4 @@
-// @flow
-import React, { Component } from 'react'
+import * as React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
@@ -10,7 +9,10 @@ import store from './store'
 
 // use a class to ensure HMR works properly, this would normally be a stateless component
 // eslint-disable-next-line react/prefer-stateless-function
-export default class Routes extends Component<{}, {}> {
+export default class Routes extends React.Component<
+  {},
+  {}
+> {
   render() {
     return (
       <Provider store={store}>

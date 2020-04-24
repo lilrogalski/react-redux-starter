@@ -1,11 +1,10 @@
-// @flow
-import React from 'react'
+import * as React from 'react'
 import { connect } from 'react-redux'
-import type { Dispatch } from 'react-redux'
+import { Dispatch } from 'redux'
 import { subtractCount } from 'lib/actions/count'
 
-type Props = {
-  dispatch: Dispatch,
+interface Props {
+  dispatch: Dispatch
 }
 
 function SubtractButton({ dispatch }: Props) {

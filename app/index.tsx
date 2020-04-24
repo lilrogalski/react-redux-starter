@@ -1,8 +1,8 @@
-import React from 'react'
+import * as React from 'react'
 import { render } from 'react-dom'
 import Routes from './Routes'
 
 render(<Routes />, document.getElementById('root'))
 
 // Opt-in to Webpack hot module replacement
-if (module.hot) module.hot.accept()
+if ((module as any).hot) (module as any).hot.accept()

@@ -13,7 +13,8 @@
     "strict": true,
     "outDir": "build",
     "lib": ["es6", "es7", "dom"],
-    "baseUrl": "src",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "app",
     "paths": {
       "app/*": ["./app/*"]
     }

@@ -1,10 +1,9 @@
-// @flow
 import { ADD_COUNT, SUBTRACT_COUNT } from '../actions/count'
 
 export function count(
   state: number = 0,
   action: {
-    type: string,
+    type: string
   },
 ) {
   switch (action.type) {

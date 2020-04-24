@@ -9,7 +9,7 @@ const isProduction =
   process.env.NODE_ENV === 'production'
 
 module.exports = {
-  entry: './app/index.js',
+  entry: './app/index.tsx',
   devtool: 'cheap-module-eval-source-map',
   module: {
     rules: [
@@ -59,7 +59,7 @@ module.exports = {
     alias: {
       lib: libPath,
     },
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.tsx', '.js', '.jsx'],
   },
   output: {
     path: path.resolve(__dirname, '/dist'),
