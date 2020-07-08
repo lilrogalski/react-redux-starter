@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
 import style from './style.css'
 import * as btn from 'lib/css/buttons.css'
 
-function Hooks() {
+export default function Hooks() {
   const [count, setCount] = useState(0)
 
   const addCount = () => setCount(count + 1)
@@ -24,5 +23,3 @@ function Hooks() {
     </div>
   )
 }
-
-export default connect()(Hooks)
